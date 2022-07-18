@@ -15,3 +15,8 @@ enum KDropDownItems {
 TextStyle smallText = GoogleFonts.montserrat(
   fontSize: 15.0,
 );
+
+TextStyle titleText = GoogleFonts.montserrat(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+);

@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       drawer: DrawerLayout(),
       appBar: AppBar(
         title: const Text(
-          'Home Screen',
+          'Home',
         ),
         actions: [
           IconButton(

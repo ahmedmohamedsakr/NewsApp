@@ -63,7 +63,10 @@ class SearchScreen extends StatelessWidget {
                 const SizedBox(
                   height: 15.0,
                 ),
-                kEmptyWidgets(image: 'assets/images/no_news.png', text: 'Ops! No search.')
+                kEmptyWidgets(
+                  image: 'assets/images/no_news.png',
+                  text: 'Ops! No search.',
+                ),
               ],
             ),
           ),

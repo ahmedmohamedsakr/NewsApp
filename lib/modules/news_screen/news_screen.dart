@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news_app/modules/details_screen.dart';
 import 'package:news_app/modules/home_screen/getx/home_controller.dart';
 import 'package:news_app/shared/components/constants.dart';
 import 'package:news_app/shared/components/components.dart';
@@ -91,10 +92,16 @@ class NewsScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemBuilder: (context, index) => kArticlesWidget(context: context),
+              itemBuilder: (context, index) => kArticlesWidget(
+                context: context,
+                onTap: () {
+                  Get.to(()=>DetailsScreen());
+                },
+              ),
               itemCount: 10,
+              physics: const BouncingScrollPhysics(),
             ),
-          )
+          ),
         ],
       ),
     );

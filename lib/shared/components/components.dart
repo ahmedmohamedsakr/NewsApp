@@ -1,5 +1,7 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:news_app/modules/web_view_screen.dart';
 import 'package:news_app/shared/components/constants.dart';
 
 Widget kTabsWidget(
@@ -33,9 +35,9 @@ Widget kTabsWidget(
   );
 }
 
-Widget kArticlesWidget({BuildContext? context}) {
+Widget kArticlesWidget({BuildContext? context,Function()?onTap}) {
   return InkWell(
-    onTap: () {},
+    onTap: onTap,
     child: Stack(
       children: [
         Container(
@@ -66,6 +68,7 @@ Widget kArticlesWidget({BuildContext? context}) {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),
                 child: FancyShimmerImage(
+                  errorWidget: Image.asset('assets/images/empty_image.png'),
                   imageUrl:
                       'https://images.unsplash.com/photo-1657835047328-d4f46cd0b9a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=406&q=80',
                   boxFit: BoxFit.fill,
@@ -101,7 +104,9 @@ Widget kArticlesWidget({BuildContext? context}) {
                           children: [
                             MaterialButton(
                                 minWidth: 1.0,
-                                onPressed: () {},
+                                onPressed: () {
+                                   Get.to(()=>WebViewScreen());
+                                },
                                 child: Icon(
                                   Icons.link,
                                 )),

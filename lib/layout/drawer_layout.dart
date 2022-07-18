@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:news_app/modules/bookmark_screen/bookmark_screen.dart';
 import 'package:news_app/modules/home_screen/getx/home_controller.dart';
 
 class DrawerLayout extends StatelessWidget {
@@ -57,10 +58,12 @@ class DrawerLayout extends StatelessWidget {
                 Icons.bookmark,
               ),
               title: Text(
-                'Home',
+                'Bookmarks',
                 style: TextStyle(fontSize: 20.0),
               ),
-              onTap: () {},
+              onTap: () {
+                Get.to(()=>BookmarkScreen());
+              },
             ),
             const Divider(
               thickness: 3.0,

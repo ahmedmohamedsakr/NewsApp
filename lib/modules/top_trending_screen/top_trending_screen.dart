@@ -1,7 +1,10 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:news_app/modules/details_screen.dart';
+import 'package:news_app/modules/web_view_screen.dart';
 
 class TopTrendingScreen extends StatelessWidget {
   @override
@@ -9,13 +12,16 @@ class TopTrendingScreen extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height *.6,
       child: Swiper(
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.all(10.0),
           child: Material(
             color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(12.0),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.to(()=>DetailsScreen());
+              },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -50,7 +56,9 @@ class TopTrendingScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(()=>WebViewScreen());
+                          },
                           icon: Icon(
                             Icons.link,
                           ),
@@ -70,7 +78,7 @@ class TopTrendingScreen extends StatelessWidget {
             ),
           ),
         ),
-        itemCount: 10,
+        itemCount: 5,
         index: 0,
         autoplay: true,
         autoplayDelay: 30000,
